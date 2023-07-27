@@ -35,27 +35,42 @@ public class MaxMinNumber {
         
         
         int count = 0;
-        int max, min, number;
+        int max =0, min = 999999999;
 
-        // number
-        System.out.println("Input number");
-        number = in.nextInt();
-        max = number;
-        min = number;
+//        // Enter integer number
+//        System.out.println("Input number");
+//        int number = in.nextInt();
+        
 
         // keep reading data untill count < 2
-        do {
-            // number input to compare with max 
-            System.out.println("Input number now");
-            number = in.nextInt();
-
+//        do {
+//            // number input to compare with max 
+//            System.out.println("Input number now");
+//            number = in.nextInt();
+//
+//            max = max > number ? max : number;
+//            min = min < number ? min : number;
+//            count += 1;
+//
+//        } while (count < 2);
+//
+//        System.out.println("Max " + max + " MIn " + min);
+        
+        
+        for(int i = 1; i <= 3; i++){
+           
+            // Enter integer number
+        System.out.println("Enter number " + i +" to find Maximum and Minimum among three numbers");
+        int number = in.nextInt();
+ 
             max = max > number ? max : number;
+            
+            // find minimum number
             min = min < number ? min : number;
-            count += 1;
-
-        } while (count < 2);
-
-        System.out.println("Max " + max + " MIn " + min);
+           
+        }
+        
+        System.out.println("Maximum number = " + max + " Minimum number = " + min);
         
         
         
