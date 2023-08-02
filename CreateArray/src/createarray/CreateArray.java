@@ -52,6 +52,7 @@ public class CreateArray {
         for (int i = 0; i < newArray.length; i++) {
             sum += newArray[i];
             max = max > newArray[i] ? max : newArray[i];
+            //find index of max
             for (int j = 1; j < newArray.length; j++) {
 
                 if (newArray[j] > max) {
@@ -62,6 +63,7 @@ public class CreateArray {
 
             }
             min = min < newArray[i] ? min : newArray[i];
+            //find index of min
             for (int k = 1; k < newArray.length; k++) {
 
                 if (newArray[k] > min) {
