@@ -30,13 +30,16 @@ public class CreateJArray {
          // sum 2D-array value 
 //        int sum = ra.sumJArray(myArray);
 
+          int sumByCol = ra.sumJArrayByCol(myArray);
+          System.out.println("Sum by Column = " + sumByCol);
+
          //print sum of 2D-array value
 //        System.out.println("Sum value = " + sum);
 //         System.out.println("Sum of array = " + ra.sumJArray(myArray));
         
             //find max and min value of each row
-            String maxMIN = ra.maxMinInRow(myArray);
-            System.out.println(maxMIN);
+//            String maxMIN = ra.maxMinInRow(myArray);
+//            System.out.println(maxMIN);
 
 //            ra.maxMinInRow(myArray);
 

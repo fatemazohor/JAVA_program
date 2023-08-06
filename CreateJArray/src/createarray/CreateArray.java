@@ -60,6 +60,21 @@ public class CreateArray {
         return sum;
     }
 
+    public int sumJArrayByCol(int[][] array) {
+
+        int sumByCol = 0;
+        int column = 0;
+        for (int col = 0; col < array[col].length; col++) {
+            for (int row = 0; row < array.length; row++) {
+                sumByCol += array[row][col];
+
+            }
+
+        }
+
+        return sumByCol;
+    }
+
     public String maxMinInRow(int[][] array) {
 
         int max, min;
