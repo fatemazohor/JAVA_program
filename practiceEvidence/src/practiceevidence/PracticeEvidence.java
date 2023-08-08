@@ -18,10 +18,10 @@ public class PracticeEvidence {
      */
     public static void main(String[] args) {
 
-        int[] myArray = {5, 4, 3, 2, 1};
+        int[] myArray = {5, 4, 3, 2, 1,7,10,12,8};
 
         for (int i = 0; i < myArray.length; i++) {
-            for (int j = 0; j < myArray.length - 1; j++) {
+            for (int j = 0; j < myArray.length-1 ; j++) {
 
                 if (myArray[j] > myArray[j + 1]) {
 
