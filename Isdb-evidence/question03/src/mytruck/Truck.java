@@ -1,9 +1,6 @@
-
- 
 package mytruck;
 
 import myvehicle.Vehicle;
-
 
 public class Truck extends Vehicle {
 
@@ -12,11 +9,12 @@ public class Truck extends Vehicle {
     public Truck() {
     }
 
-    public Truck(int speed, double regularPrice, String color) {
-        super(speed, regularPrice, color);
+    public Truck(int weight) {
+        this.weight = weight;
     }
 
-    public Truck(int weight) {
+    public Truck(int weight, int speed, double regularPrice, String color) {
+        super(speed, regularPrice, color);
         this.weight = weight;
     }
 
@@ -34,12 +32,12 @@ public class Truck extends Vehicle {
         double discount = 0.10;
 
         if (weight > 2000) {
-            finalPrice = super.regularPrice - (super.regularPrice * discount);
-        }else {
-        finalPrice = super.regularPrice;
+            finalPrice = getRegularPrice() - (getRegularPrice() * discount);
+        } else {
+            finalPrice = getRegularPrice();
         }
 
-        return finalPrice; 
+        return finalPrice;
     }
 
 }

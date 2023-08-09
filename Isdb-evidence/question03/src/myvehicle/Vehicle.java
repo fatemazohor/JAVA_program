@@ -11,7 +11,7 @@ package myvehicle;
  */
 public class Vehicle {
     private int speed;
-    public double regularPrice;
+    private double regularPrice;
     private String color;
 
     public Vehicle() {
