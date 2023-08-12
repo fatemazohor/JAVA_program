@@ -23,7 +23,7 @@ public class TestFile {
      */
     public static void main(String[] args) {
         //create a object for file when file may or may not exist yet
-        File file = new File("C:\\Users\\user\\Desktop\\readText.txt");
+        File file = new File("readText.txt");
 
         PrintWriter print = null;
         Scanner output = null;

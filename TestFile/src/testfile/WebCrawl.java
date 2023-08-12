@@ -48,7 +48,7 @@ public class WebCrawl {
 
                
             }
-            File file = new File("C:\\Users\\joty_\\Desktop\\web.text");
+            File file = new File("web.text");
             PrintWriter output = new PrintWriter(file);
             System.out.println(file.exists());
             System.out.println(file);

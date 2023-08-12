@@ -14,7 +14,7 @@ public class ReadDataWeb {
 
     public static void main(String[] args) throws FileNotFoundException {
         //create file object
-        File myFile = new File("C:\\Users\\joty_\\Desktop\\TenLineText.txt");
+        File myFile = new File("TenLineText.txt");
         //check if file exist
         System.out.println(myFile.exists());
 
