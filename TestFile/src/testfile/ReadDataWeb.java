@@ -43,7 +43,7 @@ public class ReadDataWeb {
         }
         //close file
         output.close();
-        //comment code line 26-45 before running code line 49-75.
+        //comment code line 26-45 before running code line 48-75.
         //print first 10 word per line if match condition or targeted sourceText
 //        int countN = 0;
 //        String nextN = "";
