@@ -9,6 +9,71 @@ package testbankingapplication;
  *
  * @author user
  */
-public class CheckingAccount {
+public class CheckingAccount extends BankAccount{
+    private double newBalance;
+
+    public CheckingAccount() {
+    }
+
+    public CheckingAccount(double newBalance) {
+        this.newBalance = newBalance;
+    }
+
+    public CheckingAccount(double newBalance, String accountNumber, String accountHolder, double balance, double amount) {
+        super(accountNumber, accountHolder, balance, amount);
+        this.newBalance = newBalance;
+    }
+
+    public double getNewBalance() {
+        return newBalance;
+    }
+
+    public void setNewBalance(double newBalance) {
+        this.newBalance = newBalance;
+    }
+    
+   
+
+    
+
+    
+    
+    
+    @Override
+    public double deposit() {
+        newBalance = (super.getAmount() > 0) ? (super.getBalance()+super.getAmount()) : super.getBalance();
+        return newBalance;
+                
+    }
+
+    @Override
+    public double withdraw() {
+//        newBalance = () ? (super.getBalance() - super.getAmount()): super.getBalance();
+        if (super.getAmount()+100 > super.getBalance()) {
+            newBalance = super.getBalance() - super.getAmount();
+        } else if(super.getAmount() <= super.getBalance()){
+            newBalance = super.getBalance() - super.getAmount();
+        }
+        else{
+         newBalance = super.getBalance();
+        }
+        return newBalance;
+        
+        
+    }
+
+    @Override
+    public String toString() {
+        double myBalance = super.getAmount() < 1 ? super.getBalance(): newBalance;
+        
+        return "BankAccount{" + "accountNumber=" + super.getAccountNumber() + ", accountHolder=" + super.getAccountHolder() + ", balance=" + myBalance + ", amount=" + super.getAmount() + '}';
+    }
+    
+    
+
+    
+    
+    
+  
     
 }

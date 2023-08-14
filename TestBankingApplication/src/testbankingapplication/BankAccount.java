@@ -13,15 +13,19 @@ public abstract class BankAccount {
    private String accountNumber; 
    private String accountHolder;
    private double balance;
+   private double amount;
 
  
     public BankAccount() {
     }
 
-    public BankAccount(String accountNumber, String accountHolder, double balance) {
+   
+
+    public BankAccount(String accountNumber, String accountHolder, double balance, double amount) {
         this.accountNumber = accountNumber;
         this.accountHolder = accountHolder;
         this.balance = balance;
+        this.amount = amount;
     }
 
     public String getAccountNumber() {
@@ -47,9 +51,22 @@ public abstract class BankAccount {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
     
     public abstract double deposit();
     public abstract double withdraw();
+
+    @Override
+    public String toString() {
+        return "BankAccount{" + "accountNumber=" + accountNumber + ", accountHolder=" + accountHolder + ", balance=" + balance + ", amount=" + amount + '}';
+    }
     
     
     
