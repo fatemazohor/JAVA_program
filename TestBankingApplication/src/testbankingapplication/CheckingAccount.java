@@ -48,15 +48,15 @@ public class CheckingAccount extends BankAccount{
 
     @Override
     public double withdraw() {
-//        newBalance = () ? (super.getBalance() - super.getAmount()): super.getBalance();
-        if (super.getAmount()+100 > super.getBalance()) {
-            newBalance = super.getBalance() - super.getAmount();
-        } else if(super.getAmount() <= super.getBalance()){
-            newBalance = super.getBalance() - super.getAmount();
-        }
-        else{
-         newBalance = super.getBalance();
-        }
+        newBalance = (super.getAmount() <= (super.getBalance()*1.05)) ? (super.getBalance() - super.getAmount()): super.getBalance();
+//        if (super.getAmount()+100 > super.getBalance()) {
+//            newBalance = -(super.getAmount() - super.getBalance());
+//        } else if(super.getAmount() <= super.getBalance()){
+//            newBalance = super.getBalance() - super.getAmount();
+//        }
+//        else{
+//         newBalance = super.getBalance();
+//        }
         return newBalance;
         
         
