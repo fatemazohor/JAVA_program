@@ -20,13 +20,13 @@ public class Question03 {
 //        
         
 //        //Create object of Vehicle class. no need for this code
-//        Vehicle in = new Vehicle();
+        Vehicle in = new Vehicle();
 //        in.setSpeed(0);
 //        in.setColor("red");
 //        in.setRegularPrice(regularPrice);
         
         //Create object of Truck class
-//        Truck op = new Truck();
+        Truck op = new Truck();
 //        op.setColor("blue");
 //        op.setSpeed(0);
 //        //set regular price
@@ -35,7 +35,7 @@ public class Question03 {
 //        op.setWeight(weight);
 //        
 //        //get value from getSalePrice() 0f Truck class
-//        double result = op.getSalePrice();
+        double result = op.getSalePrice();
 //        System.out.println("Final Truck Price " + result);
         
        
