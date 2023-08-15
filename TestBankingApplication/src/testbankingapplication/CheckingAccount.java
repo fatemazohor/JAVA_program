@@ -42,6 +42,7 @@ public class CheckingAccount extends BankAccount{
     @Override
     public double deposit() {
         newBalance = (super.getAmount() > 0) ? (super.getBalance()+super.getAmount()) : super.getBalance();
+        super.setBalance(newBalance);
         return newBalance;
                 
     }
@@ -57,6 +58,7 @@ public class CheckingAccount extends BankAccount{
 //        else{
 //         newBalance = super.getBalance();
 //        }
+        super.setBalance(newBalance);
         return newBalance;
         
         
@@ -64,9 +66,10 @@ public class CheckingAccount extends BankAccount{
 
     @Override
     public String toString() {
-        double myBalance = super.getAmount() < 1 ? super.getBalance(): newBalance;
+//        double myBalance = super.getAmount() < 1 ? super.getBalance(): newBalance;
+//        balance = super.getAmount() < 1 ? super.getBalance(): newBalance;
         
-        return "BankAccount{" + "accountNumber=" + super.getAccountNumber() + ", accountHolder=" + super.getAccountHolder() + ", balance=" + myBalance + ", amount=" + super.getAmount() + '}';
+        return "BankAccount{" + "accountNumber=" + super.getAccountNumber() + ", accountHolder=" + super.getAccountHolder() + ", balance=" + super.getBalance() + ", amount=" + super.getAmount() + '}';
     }
     
     

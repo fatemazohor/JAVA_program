@@ -37,20 +37,22 @@ public class SavingAccount extends BankAccount{
     @Override
     public double deposit() {
        newBalance = (super.getAmount() > 0) ? (super.getBalance()+super.getAmount()) : super.getBalance();
-        return newBalance;
+        super.setBalance(newBalance);
+       return newBalance;
     }
 
     @Override
     public double withdraw() {
         newBalance = (super.getBalance() >= super.getAmount()) ? (super.getBalance() - super.getAmount()): super.getBalance();
+        super.setBalance(newBalance);
         return newBalance;
     }
     
     @Override
     public String toString() {
-        double myBalance = super.getAmount() < 1 ? super.getBalance(): newBalance;
+//        double myBalance = super.getAmount() < 1 ? super.getBalance(): newBalance;
         
-        return "BankAccount{" + "accountNumber=" + super.getAccountNumber() + ", accountHolder=" + super.getAccountHolder() + ", balance=" + myBalance + ", amount=" + super.getAmount() + '}';
+        return "BankAccount{" + "accountNumber=" + super.getAccountNumber() + ", accountHolder=" + super.getAccountHolder() + ", balance=" + super.getBalance() + ", amount=" + super.getAmount() + '}';
     }
    
     
