@@ -6,7 +6,7 @@
 package teststudentsystemnew;
 
 import java.io.Serializable;
-
+import java.io.IOException;
 /**
  *
  * @author user
@@ -41,7 +41,7 @@ public class Student implements Serializable{
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Student Info: " + "Name is " + name + " and age " + age;
     }
     
     

@@ -36,8 +36,8 @@ public class TestStudentMange {
 //        
         FileInputStream fileInputStream = new FileInputStream("StuInfo1.dat");
         ObjectInputStream input = new ObjectInputStream(fileInputStream);
-        
-        System.out.println(input.readObject());
+        //this line give exception
+//        System.out.println(input.readObject());
            Student[] printDATA = (Student[])(input.readObject());
         
            System.out.println(Arrays.toString(printDATA));

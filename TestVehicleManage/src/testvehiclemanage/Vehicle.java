@@ -55,4 +55,16 @@ public abstract class Vehicle {
     
     public abstract void start();
     public abstract void stop();
+
+    @Override
+    public String toString() {
+        return "Vehicle{" + "registrationNumber=" + registrationNumber + ", brand=" + brand + ", year=" + year + '}';
+    }
+
+    
+
+   
+    
+    
+    
 }

@@ -25,18 +25,18 @@ public class TestStudentSystemNew {
         File file = new File("Student.dat");
         FileOutputStream outputStream = new FileOutputStream(file);
         ObjectOutputStream outputStream1 = new ObjectOutputStream(outputStream);
-        outputStream1.writeObject(file);
+        outputStream1.writeObject(students);
         
         
         
         
         FileInputStream inputStream = new FileInputStream(file);
         ObjectInputStream ois = new ObjectInputStream(inputStream);
-        System.out.println(ois.readObject());
+//        System.out.println(ois.readObject());
         
-//        Student[] newStu = (Student[])(ois.readObject());
-//        
-//        System.out.println(Arrays.toString(newStu));
+        Student[] newStu = (Student[])(ois.readObject());
+        
+        System.out.println(Arrays.toString(newStu));
         
         
         
