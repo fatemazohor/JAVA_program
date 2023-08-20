@@ -18,6 +18,8 @@ public class TestStudentMange {
         newStudent[0] = new Student("Rahat",15);
         newStudent[1] = new Student("Fahad",35);
         newStudent[1] = new Student("Tamimi",18);
+        
+       
         //code don't work
 //       Student[] stuInfo = newStudent[1].writeFile("stuInfo1.dat", newStudent);
 //        System.out.println(Arrays.toString(stuInfo));
