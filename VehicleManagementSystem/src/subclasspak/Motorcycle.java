@@ -1,6 +1,6 @@
 package subclasspak;
 
-public class Motorcycle extends vehiclemanagementsystem.Vehicle{
+public class Motorcycle extends Vehicle{
 
     public Motorcycle() {
     }
