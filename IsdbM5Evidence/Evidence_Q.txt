@@ -1,0 +1,17 @@
+Evidence
+By
+Assessor Module:  Object Oriented Programming using JAVA
+Full Marks: 50                    Duration: 45 Minutes
+Exam Date: 30/08/23
+
+1  Write a program for a  recursion.
+                                                    
+2. Write an example of generic?
+                                                                                                          
+3. Make an java example to read and write a input from file?
+
+
+4..Oral                                                      05
+	
+
+
