@@ -5,9 +5,12 @@ public class Car extends Vehicle implements TestInterface{
     public Car() {
     }
 
-    public Car(String registrationNumber, String brand, int year) {
-        super(registrationNumber, brand, year);
+    public Car(String registrationNumber, String brand, int year, double unitPrice, int unitOfProduct) {
+        super(registrationNumber, brand, year, unitPrice, unitOfProduct);
     }
+
+    
+   
 
     @Override
     public void start() {
