@@ -5,7 +5,11 @@
 package view;
 
 import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
 import java.io.FilterOutputStream;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -95,8 +99,17 @@ public class formCreate extends javax.swing.JFrame {
 
     private void btnSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseClicked
         
-        String txtn = txtName.getText().trim();
-        
+        PrintWriter pw = null;
+        try {
+            String txtn = txtName.getText().trim();
+            pw = new PrintWriter("output.txt");
+            pw.print(txtn);
+            pw.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(formCreate.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            pw.close();
+        }
     }//GEN-LAST:event_btnSaveMouseClicked
 
     /**
