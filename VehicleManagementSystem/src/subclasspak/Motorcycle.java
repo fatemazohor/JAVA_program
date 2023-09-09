@@ -5,9 +5,12 @@ public class Motorcycle extends Vehicle{
     public Motorcycle() {
     }
 
-    public Motorcycle(String registrationNumber, String brand, int year) {
-        super(registrationNumber, brand, year);
+    public Motorcycle(String registrationNumber, String brand, int year, double unitPrice, int unitOfProduct) {
+        super(registrationNumber, brand, year, unitPrice, unitOfProduct);
     }
+
+
+    
 
     @Override
     public void start() {
