@@ -2,7 +2,7 @@
 package view;
 
 
-
+import javax.swing.JFrame;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class From extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGender = new javax.swing.ButtonGroup();
-        panBackground = new javax.swing.JPanel();
+        lvlemailEntry = new javax.swing.JPanel();
         panHeader = new javax.swing.JPanel();
         lvlHeader = new javax.swing.JLabel();
         lvlName = new javax.swing.JLabel();
@@ -55,11 +55,12 @@ public class From extends javax.swing.JFrame {
         lvlSub = new javax.swing.JLabel();
         jComboBoxSub = new javax.swing.JComboBox<>();
         jDateDOB = new com.toedter.calendar.JDateChooser();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        panBackground.setBackground(new java.awt.Color(255, 255, 255));
-        panBackground.setPreferredSize(new java.awt.Dimension(700, 700));
+        lvlemailEntry.setBackground(new java.awt.Color(255, 255, 255));
+        lvlemailEntry.setPreferredSize(new java.awt.Dimension(700, 700));
 
         panHeader.setBackground(new java.awt.Color(104, 213, 213));
 
@@ -83,6 +84,12 @@ public class From extends javax.swing.JFrame {
 
         lvlContact.setText("Contact");
         lvlContact.setPreferredSize(new java.awt.Dimension(40, 20));
+
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
 
         lvlEmail.setText("Email");
         lvlEmail.setPreferredSize(new java.awt.Dimension(40, 20));
@@ -125,100 +132,106 @@ public class From extends javax.swing.JFrame {
 
         jComboBoxSub.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select--", "HTML", "JavaScript", "MySql", "Php", "Java", " " }));
 
-        javax.swing.GroupLayout panBackgroundLayout = new javax.swing.GroupLayout(panBackground);
-        panBackground.setLayout(panBackgroundLayout);
-        panBackgroundLayout.setHorizontalGroup(
-            panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panBackgroundLayout.createSequentialGroup()
+        javax.swing.GroupLayout lvlemailEntryLayout = new javax.swing.GroupLayout(lvlemailEntry);
+        lvlemailEntry.setLayout(lvlemailEntryLayout);
+        lvlemailEntryLayout.setHorizontalGroup(
+            lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lvlemailEntryLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(panBackgroundLayout.createSequentialGroup()
+                    .addGroup(lvlemailEntryLayout.createSequentialGroup()
                         .addGap(85, 85, 85)
-                        .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panBackgroundLayout.createSequentialGroup()
+                        .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(lvlemailEntryLayout.createSequentialGroup()
                                 .addComponent(lvlName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(45, 45, 45)
                                 .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panBackgroundLayout.createSequentialGroup()
+                            .addGroup(lvlemailEntryLayout.createSequentialGroup()
                                 .addComponent(lvlContact, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37)
                                 .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panBackgroundLayout.createSequentialGroup()
+                            .addGroup(lvlemailEntryLayout.createSequentialGroup()
                                 .addComponent(btnSubmit)
                                 .addGap(158, 158, 158)
                                 .addComponent(btnReset))
-                            .addGroup(panBackgroundLayout.createSequentialGroup()
-                                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(panBackgroundLayout.createSequentialGroup()
-                                        .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lvlEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(lvlemailEntryLayout.createSequentialGroup()
+                                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(lvlemailEntryLayout.createSequentialGroup()
+                                        .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(lvlDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(lvlHobby, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(45, 45, 45))
-                                    .addGroup(panBackgroundLayout.createSequentialGroup()
-                                        .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(lvlemailEntryLayout.createSequentialGroup()
+                                        .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(lvlSub, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(lvlGender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGap(37, 37, 37)))
-                                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtEmail)
-                                    .addGroup(panBackgroundLayout.createSequentialGroup()
+                                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(lvlemailEntryLayout.createSequentialGroup()
                                         .addComponent(jRadioMale)
                                         .addGap(60, 60, 60)
                                         .addComponent(jRadioFemale)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                                         .addComponent(jRadioOther))
-                                    .addGroup(panBackgroundLayout.createSequentialGroup()
+                                    .addGroup(lvlemailEntryLayout.createSequentialGroup()
                                         .addComponent(jCheckBoxRead)
                                         .addGap(18, 18, 18)
                                         .addComponent(jCheckBoxGame)
                                         .addGap(18, 18, 18)
                                         .addComponent(jCheckBoxTravel))
                                     .addComponent(jDateDOB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBoxSub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(jComboBoxSub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(lvlemailEntryLayout.createSequentialGroup()
+                                .addComponent(lvlEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(0, 226, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        panBackgroundLayout.setVerticalGroup(
-            panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panBackgroundLayout.createSequentialGroup()
+        lvlemailEntryLayout.setVerticalGroup(
+            lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lvlemailEntryLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lvlName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lvlContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lvlEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lvlDOB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jDateDOB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jDateDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lvlGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRadioMale)
                     .addComponent(jRadioFemale)
                     .addComponent(jRadioOther))
                 .addGap(18, 18, 18)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lvlHobby, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCheckBoxRead)
                     .addComponent(jCheckBoxGame)
                     .addComponent(jCheckBoxTravel))
                 .addGap(18, 18, 18)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lvlSub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxSub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
+                .addGroup(lvlemailEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubmit)
                     .addComponent(btnReset))
                 .addGap(133, 133, 133))
@@ -228,11 +241,11 @@ public class From extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lvlemailEntry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lvlemailEntry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -264,7 +277,7 @@ public class From extends javax.swing.JFrame {
         
         if (!(hobby.isEmpty())) {
 //            for (int i = 0; i < hobby.size(); i++) {
-//                String writeHobby = hobby.get(i)+",";
+//                String writeHobby = (hobby.get(i)+",");
 //                
 //            }
 //            for(String wHobby:hobby){
@@ -278,6 +291,7 @@ public class From extends javax.swing.JFrame {
         
         
     }
+    
     private void btnSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSubmitMouseClicked
         PrintWriter pw = null;
         try {
@@ -310,6 +324,15 @@ public class From extends javax.swing.JFrame {
         }
                 
     }//GEN-LAST:event_btnSubmitMouseClicked
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        // TODO add your handling code here:
+//        String email = txtEmail.getText().trim();
+//        String pattern = "";
+//        if(!(email.matches(pattern))){
+//          
+//        }else{}
+    }//GEN-LAST:event_txtEmailFocusLost
 
     /**
      * @param args the command line arguments
@@ -355,6 +378,7 @@ public class From extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBoxTravel;
     private javax.swing.JComboBox<String> jComboBoxSub;
     private com.toedter.calendar.JDateChooser jDateDOB;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioFemale;
     private javax.swing.JRadioButton jRadioMale;
     private javax.swing.JRadioButton jRadioOther;
@@ -366,7 +390,7 @@ public class From extends javax.swing.JFrame {
     private javax.swing.JLabel lvlHobby;
     private javax.swing.JLabel lvlName;
     private javax.swing.JLabel lvlSub;
-    private javax.swing.JPanel panBackground;
+    private javax.swing.JPanel lvlemailEntry;
     private javax.swing.JPanel panHeader;
     private javax.swing.JTextField txtContact;
     private javax.swing.JTextField txtEmail;

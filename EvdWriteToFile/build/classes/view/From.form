@@ -27,17 +27,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="panBackground" alignment="0" max="32767" attributes="0"/>
+          <Component id="lvlemailEntry" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="panBackground" alignment="0" max="32767" attributes="0"/>
+          <Component id="lvlemailEntry" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="panBackground">
+    <Container class="javax.swing.JPanel" name="lvlemailEntry">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -74,15 +74,14 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lvlEmail" min="-2" max="-2" attributes="0"/>
                                               <Component id="lvlDOB" min="-2" max="-2" attributes="0"/>
                                               <Component id="lvlHobby" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="lvlSub" alignment="0" max="32767" attributes="0"/>
                                               <Component id="lvlGender" max="32767" attributes="0"/>
@@ -91,15 +90,14 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtEmail" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="jRadioMale" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                           <Component id="jRadioFemale" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace pref="65" max="32767" attributes="0"/>
                                           <Component id="jRadioOther" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="jCheckBoxRead" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="jCheckBoxGame" min="-2" max="-2" attributes="0"/>
@@ -108,6 +106,14 @@
                                       </Group>
                                       <Component id="jDateDOB" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jComboBoxSub" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lvlEmail" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtEmail" pref="284" max="32767" attributes="0"/>
+                                      <Component id="jLabel1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -138,10 +144,12 @@
                       <Component id="lvlEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="7" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="lvlDOB" max="32767" attributes="0"/>
-                      <Component id="jDateDOB" max="32767" attributes="0"/>
+                      <Component id="jDateDOB" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -162,7 +170,7 @@
                       <Component id="lvlSub" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jComboBoxSub" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="167" max="32767" attributes="0"/>
+                  <EmptySpace pref="157" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnSubmit" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnReset" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -225,6 +233,9 @@
         <Component class="javax.swing.JTextField" name="txtContact">
         </Component>
         <Component class="javax.swing.JTextField" name="txtEmail">
+          <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtEmailFocusLost"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lvlEmail">
           <Properties>
@@ -340,6 +351,8 @@
           </AuxValues>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jDateDOB">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
         </Component>
       </SubComponents>
     </Container>

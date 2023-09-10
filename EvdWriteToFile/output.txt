@@ -1,7 +1,7 @@
-Name: Eat
-Contact: Pry
-Email: die
-Gender: Other
-Hobby: [Gaming, Travaling]
-Subject: JavaScript
-Date Of Birth: Wed Sep 13 13:09:01 BDT 2023
+Name: Alife
+Contact: 025465
+Email: alife@gmail.com
+Gender: Male
+Hobby: [Reading, Gaming, Travaling]
+Subject: MySql
+Date Of Birth: Mon Sep 11 00:28:48 BDT 2023
