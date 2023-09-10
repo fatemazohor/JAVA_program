@@ -1,0 +1,7 @@
+Name: Eat
+Contact: Pry
+Email: die
+Gender: Other
+Hobby: [Gaming, Travaling]
+Subject: JavaScript
+Date Of Birth: Wed Sep 13 13:09:01 BDT 2023
