@@ -11,15 +11,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author joty_
- */
+
 public class NewJFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewJFrame
-     */
+    
     public NewJFrame() {
         initComponents();
     }
@@ -52,6 +47,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jCheckBox1 = new javax.swing.JCheckBox();
         lvlLocation = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jRadioOther = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,6 +112,12 @@ public class NewJFrame extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, btnSubmit, org.jdesktop.beansbinding.ObjectProperty.create(), jComboBox1, org.jdesktop.beansbinding.BeanProperty.create("elements"));
         bindingGroup.addBinding(binding);
 
+        btnGenderGroup.add(jRadioOther);
+        jRadioOther.setText("Other");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jRadioOther, org.jdesktop.beansbinding.ELProperty.create("${actionCommand}"), jRadioOther, org.jdesktop.beansbinding.BeanProperty.create("actionCommand"));
+        bindingGroup.addBinding(binding);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,18 +132,23 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(lvlRemarks, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
+                                    .addComponent(jScrollPane1))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(lvlSex, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lvlCours))
                                     .addGap(18, 18, 18)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jCheckBox1)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jCheckBox1)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(jRadioMale)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jRadioFemale)))))
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jRadioFemale)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jRadioOther)
+                                            .addGap(0, 0, Short.MAX_VALUE)))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(lvlName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -156,7 +163,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(lvlLocation)
                         .addGap(18, 18, 18)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,7 +187,8 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lvlSex)
                     .addComponent(jRadioMale)
-                    .addComponent(jRadioFemale))
+                    .addComponent(jRadioFemale)
+                    .addComponent(jRadioOther))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lvlCours)
@@ -267,6 +275,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioFemale;
     private javax.swing.JRadioButton jRadioMale;
+    private javax.swing.JRadioButton jRadioOther;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lvlCours;
     private javax.swing.JLabel lvlHeader;

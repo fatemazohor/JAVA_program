@@ -37,7 +37,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="lvlRemarks" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane1" pref="189" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane1" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -46,11 +46,17 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jRadioMale" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jRadioMale" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="jRadioFemale" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jRadioOther" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -76,7 +82,7 @@
                       <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="169" max="32767" attributes="0"/>
+              <EmptySpace pref="165" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -107,6 +113,7 @@
                   <Component id="lvlSex" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jRadioMale" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jRadioFemale" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioOther" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -260,6 +267,17 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioOther">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="btnGenderGroup"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Other"/>
+      </Properties>
+      <BindingProperties>
+        <BindingProperty name="actionCommand" source="jRadioOther" sourcePath="${actionCommand}" target="jRadioOther" targetPath="actionCommand" updateStrategy="0" immediately="false"/>
+      </BindingProperties>
     </Component>
   </SubComponents>
 </Form>
