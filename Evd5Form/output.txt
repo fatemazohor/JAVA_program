@@ -1,4 +1,0 @@
-Name adgid
-Contact 1234
-Remarks work
-Gender Other
