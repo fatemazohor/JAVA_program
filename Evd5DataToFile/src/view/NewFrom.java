@@ -54,6 +54,7 @@ public class NewFrom extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtaddress = new javax.swing.JTextArea();
+        btnReset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,6 +118,13 @@ public class NewFrom extends javax.swing.JFrame {
         txtaddress.setRows(5);
         jScrollPane1.setViewportView(txtaddress);
 
+        btnReset.setText("Reset");
+        btnReset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnResetMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,7 +152,10 @@ public class NewFrom extends javax.swing.JFrame {
                                 .addGap(34, 34, 34)
                                 .addComponent(jCheckBox3))
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(130, 130, 130)
+                                .addComponent(btnReset))
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +203,9 @@ public class NewFrom extends javax.swing.JFrame {
                         .addComponent(jRadioButton1)
                         .addComponent(jRadioButton2)))
                 .addGap(12, 12, 12)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(btnReset))
                 .addContainerGap())
         );
 
@@ -259,6 +272,18 @@ public class NewFrom extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
+        // TODO add your handling code here:
+      jTextname.setText("");
+      txtaddress.setText("");
+      buttonGroup1.clearSelection();
+      jCheckBox1.setSelected(false);
+      jCheckBox2.setSelected(false);
+      jCheckBox3.setSelected(false);
+      jComboBox1.setSelectedIndex(0);
+      jDateChooser1.setDate(null);
+    }//GEN-LAST:event_btnResetMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -295,6 +320,7 @@ public class NewFrom extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReset;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;

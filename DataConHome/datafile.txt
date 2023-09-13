@@ -1,0 +1,7 @@
+Name          Trisha
+Address       Demra
+Email         trisha@gmail.com
+Date of Birth Thu Dec 21 00:00:00 BDT 2000
+Gender        Female
+Subject       HTML
+Hobby         Reading Gaming 
