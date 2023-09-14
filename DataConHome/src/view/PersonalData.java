@@ -378,6 +378,8 @@ public class PersonalData extends javax.swing.JFrame {
             ps.setString(7, hobby);
             
             ps.executeUpdate();
+            ps.close();
+            dc.getCon().close();
             System.out.println("Ok");
             
         } catch (SQLException ex) {
