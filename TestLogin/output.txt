@@ -1,1 +1,7 @@
-Name        :Email       :Birth Date  :Sat Sep 02 12:04:23 BDT 2023Address     :Gender      :FemaleSubject     :-- Select --Hobby       :
+Name        :Fatema
+Email       :fatem@ff
+Birth Date  :Sat May 20 00:00:00 BDT 2023
+Address     :Dhaka
+Gender      :Female
+Subject     :Java
+Hobby       :Reading 

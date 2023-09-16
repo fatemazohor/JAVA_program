@@ -287,43 +287,45 @@ public class DashboardFrame extends javax.swing.JFrame {
         
         
         
-        
-        sql = "insert into persons(name,email,dob,address,gender,subject,hobby) values(?,?,?,?,?,?,?)";
-        
-        try {
-            ps =dataCon.getCon().prepareCall(sql);
-            ps.setString(1, name);
-            ps.setString(2, email);
-            ps.setString(3, null);
-            ps.setString(4, address);
-            ps.setString(5, gender );
-            ps.setString(6, subject);
-            ps.setString(7, hobby);
-            
-            
-            
-            ps.executeUpdate();
-            dataCon.getCon().close();
-                  
-        } catch (SQLException ex) {
-            Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        JOptionPane.showMessageDialog(rootPane, "Data Saved");
-        dispose();
+        //send data to mysql database
+//        sql = "insert into persons(name,email,dob,address,gender,subject,hobby) values(?,?,?,?,?,?,?)";
+//        
 //        try {
-//            PrintWriter printWriter  = new PrintWriter("output.txt");
-//            printWriter.print("Name        :"+name);
-//            printWriter.print("Email       :"+email);
-//            printWriter.print("Birth Date  :"+date);
-//            printWriter.print("Address     :"+address);
-//            printWriter.print("Gender      :"+gender);
-//            printWriter.print("Subject     :"+subject);
-//            printWriter.print("Hobby       :"+hobby);
-//            printWriter.close();
-//        } catch (FileNotFoundException ex) {
+//            ps =dataCon.getCon().prepareCall(sql);
+//            ps.setString(1, name);
+//            ps.setString(2, email);
+//            ps.setString(3, null);
+//            ps.setString(4, address);
+//            ps.setString(5, gender );
+//            ps.setString(6, subject);
+//            ps.setString(7, hobby);
+//            
+//            
+//            
+//            ps.executeUpdate();
+//            dataCon.getCon().close();
+//                  
+//        } catch (SQLException ex) {
 //            Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
 //        }
+        
+        
+        //write data txt file
+        try {
+            PrintWriter printWriter  = new PrintWriter("output.txt");
+            printWriter.print("Name        :"+name+"\n");
+            printWriter.print("Email       :"+email+"\n");
+            printWriter.print("Birth Date  :"+date+"\n");
+            printWriter.print("Address     :"+address+"\n");
+            printWriter.print("Gender      :"+gender+"\n");
+            printWriter.print("Subject     :"+subject+"\n");
+            printWriter.print("Hobby       :"+hobby);
+            printWriter.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    JOptionPane.showMessageDialog(rootPane, "Data Saved");
                 
     }//GEN-LAST:event_btnSaveMouseClicked
 

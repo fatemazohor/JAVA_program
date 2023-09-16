@@ -7,6 +7,8 @@ package view;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -240,16 +242,29 @@ public class From extends javax.swing.JFrame {
         }
         return hobby;
     }
+    
+    private String getDate(){
+    String date;
+    jDateChooser1.getDate();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+        
+        date = dateFormat.format(jDateChooser1.getDate());
+        
+    return date;
+    }
     private void btnSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSubmitMouseClicked
-        PrintWriter pw = null;
-        try {
+       
             // TODO add your handling code here:
             String name = txtName.getText().trim();
             String address = txtaddress.getText().trim();
-            String dateDob = jDateChooser1.getDate().toString();
+            String dateDob = getDate();
             String subject = jComboSub.getSelectedItem().toString();
             String hobby = getHobby();
             String gender = buttonGroup1.getSelection().getActionCommand();
+            System.out.println(dateDob);
+            
+             PrintWriter pw = null;
+        try {
             pw = new PrintWriter("dataEntry.txt");
             
             pw.print("Name:    "+name+"\n");
@@ -261,9 +276,14 @@ public class From extends javax.swing.JFrame {
             pw.close();
              JOptionPane.showMessageDialog(rootPane, "Data Saved");
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(From.class.getName()).log(Level.SEVERE, null, ex);  
+            Logger.getLogger(From.class.getName()).log(Level.SEVERE, null, ex);  }
+        
+        
+        
+        
     }//GEN-LAST:event_btnSubmitMouseClicked
-    }
+    
+    
     /**
      * @param args the command line arguments
      */

@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class DataCon {
     private Connection con = null;
-    private String url = "jdbc:mysql://localhost:3306/dashboard";
+    private String url = "jdbc:mysql://localhost:3306/dashboard1";
     private String user = "root";
     private String password = "1234";
     private String driver = "com.mysql.cj.jdbc.Driver";

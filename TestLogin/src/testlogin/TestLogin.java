@@ -1,7 +1,14 @@
 package testlogin;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import utill.DataCon;
@@ -14,31 +21,31 @@ public class TestLogin {
         From from = new From();
         from.setLocationRelativeTo(null);
         from.setVisible(true);
-        
-        
-        
-        
-//        DataCon dataCon = new DataCon();
-//        String sql = "insert into persons(name,email,dob,address,gender,subject,hobby) values(?,?,?,?,?,?,?)";
-//        
+
+        //read txt file 
+//        String str = "F:\\netbeans\\TestLoginHome\\output.txt";
+//
+//        StringBuffer builder = new StringBuffer();
+//
 //        try {
-//            PreparedStatement ps =dataCon.getCon().prepareCall(sql);
-//            ps.setString(1, "Fahim");
-//            ps.setString(2, "Fahim@dfkd");
-//            ps.setString(3, null);
-//            ps.setString(4, "Dhaka");
-//            ps.setString(5, "Male");
-//            ps.setString(6, "HTML");
-//            ps.setString(7, "Reading Travaling");
-//            
-//            
-//            
-//            ps.executeUpdate();
-//            dataCon.getCon().close();
-//        } catch (SQLException ex) {
+//            BufferedReader buffer = new BufferedReader(new FileReader(str));
+//
+//            String file;
+//
+//            // Condition check via buffer.readLine() method
+//            // holding true upto that the while loop runs
+//            while ((file = buffer.readLine()) != null) {
+//
+//                builder.append(file).append("\n");
+//            }
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(TestLogin.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
 //            Logger.getLogger(TestLogin.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-        
+//
+//        System.out.println(builder.toString());
+
     }
-    
+
 }
