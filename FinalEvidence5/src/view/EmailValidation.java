@@ -5,6 +5,8 @@
  */
 package view;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,12 +20,19 @@ public class EmailValidation extends javax.swing.JFrame {
      */
     public EmailValidation() {
         initComponents();
+       
     }
-    
-    private void reset(){
-    
-     txtEmail.setText(null);
+
+    private void reset() {
+
+        txtEmail.setText(null);
     }
+
+//    private void setImage() {
+//        ImageIcon icon = new ImageIcon(getClass().getResource("folder\\github\\JAVA_program\\FinalEvidence5\\image"));
+//        Image img = icon.getImage().getScaledInstance(lvlImage.getWidth(), lvlImage.getHeight(), Image.SCALE_SMOOTH);
+//        lvlImage.setIcon(new ImageIcon(img));
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,13 +46,14 @@ public class EmailValidation extends javax.swing.JFrame {
         panBack = new javax.swing.JPanel();
         lvlEmailValid = new javax.swing.JLabel();
         panLeft = new javax.swing.JPanel();
+        lvlImage = new javax.swing.JLabel();
         lvlEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         btnRese = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.FlowLayout());
 
         panBack.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -53,15 +63,23 @@ public class EmailValidation extends javax.swing.JFrame {
 
         panLeft.setBackground(new java.awt.Color(102, 102, 255));
 
+        lvlImage.setText("jLabel1");
+
         javax.swing.GroupLayout panLeftLayout = new javax.swing.GroupLayout(panLeft);
         panLeft.setLayout(panLeftLayout);
         panLeftLayout.setHorizontalGroup(
             panLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 228, Short.MAX_VALUE)
+            .addGroup(panLeftLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(lvlImage, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         panLeftLayout.setVerticalGroup(
             panLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(panLeftLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(lvlImage, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lvlEmail.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -128,7 +146,7 @@ public class EmailValidation extends javax.swing.JFrame {
             .addComponent(panLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        getContentPane().add(panBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 480));
+        getContentPane().add(panBack);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -142,7 +160,8 @@ public class EmailValidation extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Email is Invalid");
         }
-                
+//         setImage();
+
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void btnReseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReseMouseClicked
@@ -190,6 +209,7 @@ public class EmailValidation extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel lvlEmail;
     private javax.swing.JLabel lvlEmailValid;
+    private javax.swing.JLabel lvlImage;
     private javax.swing.JPanel panBack;
     private javax.swing.JPanel panLeft;
     private javax.swing.JTextField txtEmail;

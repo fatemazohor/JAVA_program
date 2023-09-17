@@ -11,9 +11,11 @@ import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -59,6 +61,9 @@ public class From extends javax.swing.JFrame {
         btnSubmit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtaddress = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -137,6 +142,26 @@ public class From extends javax.swing.JFrame {
         txtaddress.setRows(5);
         jScrollPane1.setViewportView(txtaddress);
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        jButton1.setText("Show");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panBackgroundLayout = new javax.swing.GroupLayout(panBackground);
         panBackground.setLayout(panBackgroundLayout);
         panBackgroundLayout.setHorizontalGroup(
@@ -165,45 +190,56 @@ public class From extends javax.swing.JFrame {
                         .addComponent(jCheckBox3))
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboSub, 0, 258, Short.MAX_VALUE)
-                    .addComponent(btnSubmit)
+                    .addGroup(panBackgroundLayout.createSequentialGroup()
+                        .addComponent(btnSubmit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(46, 46, 46))
                     .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
         );
         panBackgroundLayout.setVerticalGroup(
             panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panBackgroundLayout.createSequentialGroup()
                 .addComponent(panHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lvlName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lvlAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lvlDoB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboSub, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lvlsub, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panBackgroundLayout.createSequentialGroup()
+                        .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lvlName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lvlAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(41, 41, 41)
+                        .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lvlDoB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboSub, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lvlsub, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lvlhobby, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCheckBox1)
+                            .addComponent(jCheckBox2)
+                            .addComponent(jCheckBox3))
+                        .addGap(18, 18, 18)
+                        .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lvlGender, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioMale)
+                            .addComponent(jRadioFemale)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lvlhobby, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3))
-                .addGap(18, 18, 18)
-                .addGroup(panBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lvlGender, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioMale)
-                    .addComponent(jRadioFemale))
-                .addGap(18, 18, 18)
-                .addComponent(btnSubmit)
-                .addGap(71, 71, 71))
+                    .addComponent(btnSubmit)
+                    .addComponent(jButton1))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -221,9 +257,9 @@ public class From extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private String getHobby(){
+    private String getHobby() {
         List<String> list = new ArrayList<>();
-        
+
         if (jCheckBox1.isSelected()) {
             list.add(jCheckBox1.getText());
         }
@@ -233,7 +269,7 @@ public class From extends javax.swing.JFrame {
         if (jCheckBox3.isSelected()) {
             list.add(jCheckBox3.getText());
         }
-        
+
         String hobby = "";
         if (!(list.isEmpty())) {
             hobby = list.toString();
@@ -242,52 +278,85 @@ public class From extends javax.swing.JFrame {
         }
         return hobby;
     }
-    
-    private String getDate(){
-    String date;
-    jDateChooser1.getDate();
+
+    private String getDate() {
+        String date;
+        jDateChooser1.getDate();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
-        
+
         date = dateFormat.format(jDateChooser1.getDate());
-        
-    return date;
+
+        return date;
     }
     private void btnSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSubmitMouseClicked
-       
-            // TODO add your handling code here:
-            String name = txtName.getText().trim();
-            String address = txtaddress.getText().trim();
-            String dateDob = getDate();
-            String subject = jComboSub.getSelectedItem().toString();
-            String hobby = getHobby();
-            String gender = buttonGroup1.getSelection().getActionCommand();
-            System.out.println(dateDob);
-            
-             PrintWriter pw = null;
+
+        // TODO add your handling code here:
+        String name = txtName.getText().trim();
+        String address = txtaddress.getText().trim();
+        String dateDob = getDate();
+        String subject = jComboSub.getSelectedItem().toString();
+        String hobby = getHobby();
+        String gender = buttonGroup1.getSelection().getActionCommand();
+        System.out.println(dateDob);
+
+        PrintWriter pw = null;
         try {
             pw = new PrintWriter("dataEntry.txt");
-            
-            pw.print("Name:    "+name+"\n");
-            pw.print("Address: "+address+"\n");
-            pw.print("DOB:     "+dateDob+"\n");
-            pw.print("Subject: "+subject+"\n");
-            pw.print("Hobby:   "+hobby+"\n");
-            pw.print("Gender:  "+gender);
+
+            pw.print("Name:    " + name + "\n");
+            pw.print("Address: " + address + "\n");
+            pw.print("DOB:     " + dateDob + "\n");
+            pw.print("Subject: " + subject + "\n");
+            pw.print("Hobby:   " + hobby + "\n");
+            pw.print("Gender:  " + gender);
             pw.close();
-             JOptionPane.showMessageDialog(rootPane, "Data Saved");
+            JOptionPane.showMessageDialog(rootPane, "Data Saved");
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(From.class.getName()).log(Level.SEVERE, null, ex);  }
-        
-        
-        
-        
+            Logger.getLogger(From.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_btnSubmitMouseClicked
-    
-    
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        String name = txtName.getText().trim();
+        String address = txtaddress.getText().trim();
+        String dateDob = getDate();
+        String subject = jComboSub.getSelectedItem().toString();
+        String hobby = getHobby();
+        String gender = buttonGroup1.getSelection().getActionCommand();
+        System.out.println(dateDob);
+
+        String[] columnNames = {"Name", "Address","BirthDate", "Subject", "Hobby", "Gender"};
+        int row = 0;
+        int col = columnNames.length;
+        System.out.println(col);
+        String[][] data = new String[1][col];
+        
+        
+            data[0][0] = name;
+            data[0][1] = address;
+            data[0][2] = dateDob;
+            data[0][3] = subject;
+            data[0][4] = hobby;
+            data[0][5] = gender;
+//        //use multidimension array
+        DefaultTableModel dtm = new DefaultTableModel(data, columnNames);
+        jTable1.setModel(dtm);
+            //addrow methods
+//        DefaultTableModel dtm = new DefaultTableModel();
+//        
+//        dtm.setColumnIdentifiers(columnNames);
+//        dtm.addRow(new Object[]{name,address,dateDob,subject,hobby,gender});
+//        jTable1.setModel(dtm);
+
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]){
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -320,6 +389,7 @@ public class From extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -328,6 +398,8 @@ public class From extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioFemale;
     private javax.swing.JRadioButton jRadioMale;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lvlAddress;
     private javax.swing.JLabel lvlDoB;
     private javax.swing.JLabel lvlGender;
