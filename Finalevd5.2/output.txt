@@ -1,0 +1,7 @@
+Name           :Omar Faruk
+Email          :omar@gff.com
+Address        :Dhaka	
+Date of Birth  :02-Sep-2023
+gender         :Male
+Subject        :Java
+Hobby          :Reading Gaming Travaling 
